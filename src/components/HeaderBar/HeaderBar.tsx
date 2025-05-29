@@ -53,6 +53,7 @@ export const HeaderBar = () => {
         <CustomButton
           backgroundColor={"var(--white)"}
           color={"var(--primary)"}
+          border="1px solid var(--primary)"
           label={"Оставить заявку"}
           onClick={() => setIsFormOpen(true)}
         />
