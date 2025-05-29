@@ -82,14 +82,23 @@
   }
 }
 
-.heading {
+.heading,
+.heading_dark {
   font-size: 32px;
   color: var(--primary);
   font-weight: 400;
   padding: 80px 0;
 }
 
-.services {
+.heading_dark {
+  color: var(--white);
+}
+
+.services,
+.portfolio, 
+.price, 
+.team, 
+.contacts{
     padding: 80px 0;
 
     &_suptitle{
@@ -105,8 +114,86 @@
       font-weight: 700;
       padding: 26px 0 65px 0;
     }
-
-    &_container {
-      
-    }
 }
+
+.team{
+  &_title{
+    padding: 26px 0 8px 0;
+  }
+
+  &_text {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--primary);
+    padding-left: 50%;
+  }
+}
+
+.heading_form{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.heading_form_dark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 80px 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  overflow: visible;
+  isolation: isolate;
+
+  &::after {
+    content: 'айдентика';
+    position: absolute;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 155px;
+    font-weight: 600;
+    text-align: center;
+    color: #172778;
+    z-index: -1;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: none; 
+  }
+}
+
+.reviews{
+  padding: 80px 0;
+  display: flex;
+  
+  &_container{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: var(--primary);
+    padding: 40px 0 0 30px;
+  }
+
+  &_suptitle{
+    font-size: 20px;
+    color: var(--light-white);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &_title{
+    font-size: 40px;
+    color: var(--green);
+    font-weight: 700;
+    padding: 26px 0 65px 0;
+  }
+
+  &_slider{
+    width: 100%;
+    background-color: var(--primary);
+  }
+}
+
