@@ -57,5 +57,26 @@
     object-fit: cover;
     z-index: 0;
   }
+
+  &_list {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: end;
+    list-style-type: disc;
+    
+    &_item {
+      color: var(--gray);
+      
+      &::marker {
+        color: var(--green);
+      }
+        
+    }
+  }
 }
 
