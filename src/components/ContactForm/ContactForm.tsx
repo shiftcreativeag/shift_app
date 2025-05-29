@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ContactForm.module.scss";
 
 const formSchema = z.object({
@@ -19,6 +19,7 @@ interface ContactFormProps {
 }
 
 export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const {
     register,
     handleSubmit,
@@ -36,7 +37,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
 
   const onSubmit = (data: FormData) => {
     console.log("Форма отправлена:", data);
-    onClose();
+    setIsSubmitted(true);
   };
 
   useEffect(() => {
@@ -62,6 +63,31 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
     "Видео",
     "Лендинг",
   ];
+
+  if (isSubmitted) {
+    return (
+      <div className={styles.modal_overlay} onClick={onClose}>
+        <div
+          className={styles.modal_content}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            className={styles.close_button}
+            onClick={onClose}
+            aria-label="Закрыть"
+          >
+            &times;
+          </button>
+          <div className={styles.success_сontainer}>
+            <h2 className={styles.success_title}>Ваша заявка отправлена</h2>
+            <p className={styles.success_text}>
+              Наш менеджер свяжется с Вами для обсуждения проекта
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.modal_overlay} onClick={onClose}>

@@ -259,3 +259,35 @@
     right: 10px;
   }
 }
+
+// Модальное окно успешной отправки формы
+.success_сontainer {
+  text-align: center;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.success_title {
+  color: var(--primary);
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  &::after {
+    content: "✓";
+    color: var(--green);
+    font-size: 28px;
+  }
+}
+
+.success_text {
+  color: var(--primary);
+  margin-bottom: 30px;
+  line-height: 1.5;
+  font-size: 18px;
+}
