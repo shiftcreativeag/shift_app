@@ -1,9 +1,12 @@
-
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./HeaderBar.module.scss";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { ContactForm } from "../ContactForm/ContactForm";
 
 export const HeaderBar = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -46,8 +49,12 @@ export const HeaderBar = () => {
         <Link to="/">
           <img src="/png/logo.png" alt="logo" />
         </Link>
-        <button className={styles.button}>Оставить заявку</button>
+        <button className={styles.button} onClick={() => setIsFormOpen(true)}>
+          Оставить заявку
+        </button>
       </header>
+
+      {isFormOpen && <ContactForm onClose={() => setIsFormOpen(false)} />}
     </div>
   );
 };
