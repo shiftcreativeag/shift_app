@@ -1,0 +1,18 @@
+.button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 38px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition-duration);
+  font-weight: 600;
+  
+  &:hover {
+    background-color: var(--green_dark);
+    transition: all 0.3s ease 0s;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
