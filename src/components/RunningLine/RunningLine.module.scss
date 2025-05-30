@@ -1,0 +1,27 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.line {
+  display: flex;
+//   align-items: center;
+//   padding: 0 clamp(1rem, 4vw, 3rem); 
+//   gap: clamp(2rem, 5vw, 6rem);       
+//   min-width: max-content;
+}
+
+// .item {
+//   flex-shrink: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: clamp(30px, 5vw, 60px); // адаптивная высота
+// }
+
+.item img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}

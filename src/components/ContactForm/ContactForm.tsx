@@ -59,7 +59,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
     "Айдентика",
     "Интернет-магазин",
     "Сайт",
-    "СМИ",
+    "СММ",
     "Видео",
     "Лендинг",
   ];
@@ -133,6 +133,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
                 )}
               </div>
             </div>
+
             <div>
               <div className={styles.field}>
                 <input {...register("name")} placeholder="Имя" />

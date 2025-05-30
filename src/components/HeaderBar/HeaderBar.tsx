@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./HeaderBar.module.scss";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { ContactForm } from "../ContactForm/ContactForm";
+import { CustomButton } from "../CustomButton/CustomButton";
 
 export const HeaderBar = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -49,9 +50,13 @@ export const HeaderBar = () => {
         <Link to="/">
           <img src="/png/logo.png" alt="logo" />
         </Link>
-        <button className={styles.button} onClick={() => setIsFormOpen(true)}>
-          Оставить заявку
-        </button>
+        <CustomButton
+          backgroundColor={"var(--white)"}
+          color={"var(--primary)"}
+          border="1px solid var(--primary)"
+          label={"Оставить заявку"}
+          onClick={() => setIsFormOpen(true)}
+        />
       </header>
 
       {isFormOpen && <ContactForm onClose={() => setIsFormOpen(false)} />}

@@ -1,3 +1,21 @@
+//стили для фона с частицами
+.background_main{
+  position: relative;
+  width: 100%;
+  height: 654px;
+
+  &_particles{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+//стили для секции main
 .main {
   margin-top: 120px;
   position: relative; 
@@ -6,11 +24,13 @@
   justify-content: center; 
   align-items: center; 
   height: 654px; 
+  z-index: 1;
 
   &_title_container{
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
   }
 
   &_title {
@@ -25,6 +45,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 104px;
+    user-select: none;
   }
 
   &_text {
@@ -36,6 +58,8 @@
     font-size: 42px;
     font-weight: 500;
     writing-mode: sideways-lr;
+    margin-top: 104px;
+    user-select: none;
   }
 
   &_subtext{
@@ -46,16 +70,267 @@
     color: var(--white);
     font-size: 30px;
     font-weight: 500;
+    user-select: none;
   }
 
   &_background {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    left: 10px;
+    width: 1400px;
+    height: 654px;
     object-fit: cover;
     z-index: 0;
   }
+
+  &_list {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: end;
+    list-style-type: disc;
+    user-select: none;
+    
+    &_item {
+      color: var(--gray);
+      
+      &::marker {
+        color: var(--green);
+      }
+        
+    }
+  }
 }
+
+//стили для заголовков без фона и с фоном
+.heading,
+.heading_dark {
+  font-size: 32px;
+  color: var(--primary);
+  font-weight: 400;
+  padding: 80px 0;
+}
+
+.heading_dark {
+  color: var(--white);
+}
+
+//стили для заголовков без фона и с фоном + кнопка
+.heading_form{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.heading_form_dark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 80px 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  overflow: visible;
+  isolation: isolate;
+
+  &::after {
+    content: 'айдентика';
+    position: absolute;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 155px;
+    font-weight: 600;
+    text-align: center;
+    color: #172778;
+    z-index: -1;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    pointer-events: none; 
+  }
+}
+
+//общие стили для секций
+.services,
+.portfolio, 
+.price, 
+.team, 
+.contacts{
+    padding: 80px 0;
+
+    &_suptitle{
+      font-size: 20px;
+      color: var(--gray);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    &_title{
+      font-size: 40px;
+      color: var(--primary);
+      font-weight: 700;
+      padding: 26px 0 65px 0;
+    }
+}
+
+//стили для секции reviews
+.reviews{
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  &_container{
+    width: 100%;
+    height: 508px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    background-color: var(--primary);
+    padding: 40px 0 0 30px;
+  }
+
+  &_suptitle{
+    font-size: 20px;
+    color: var(--light-white);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &_title{
+    font-size: 40px;
+    color: var(--green);
+    font-weight: 700;
+    padding: 26px 0 65px 0;
+  }
+
+  &_slider{
+    background-color: var(--primary);
+  }
+
+  &_carousel {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    gap: 150px;
+
+    &_content {
+      display: flex;
+      gap: 150px;
+      animation: carousel 10s linear infinite;
+
+      & span {
+        font-size: 50px;
+        font-weight: 800;
+        color: transparent;          
+        -webkit-text-stroke: 2px var(--secondary); 
+      }
+    }
+  }
+}
+
+//стили для секции team
+.team {
+  &_title{
+    padding: 26px 0 8px 0;
+  }
+
+  &_text {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--primary);
+    padding-left: 50%;
+  }
+}
+
+//стили для секции contacts
+.contacts {
+  &_content{
+    display: flex;
+    gap: 16px;
+
+    &_form{
+      border-radius: 4px;
+      width: 50%;
+      background-color: var(--primary);
+      padding: 20px;
+
+      &_title{
+        padding-top: 30px;
+        color: var(--green);
+        margin-bottom: 16px;
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      &_text{
+        color: var(--white);
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 121px;
+      }
+    }
+
+    &_socials{
+      border-radius: 4px;
+      width: 25%;
+      padding: 30px 20px;
+      background-color: var(--green);
+
+      &_title{
+        color: var(--primary);
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+
+      &_links{
+        display: flex;
+        justify-content: center;
+        gap: 41px;
+        margin-bottom: 50px;
+        
+        &_text {
+          color: var(--primary);
+          display: flex;
+          flex-direction: column;
+          gap: 21px;
+          align-items: center;
+          font-size: 18px;
+        }
+      }
+    }
+    
+    &_address{
+      border-radius: 4px;
+      width: 25%;
+      padding: 30px 20px;
+      background-color: var(--light-white);
+      
+      &_title{
+        color: var(--primary);
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+
+      &_text{
+        color: var(--primary);
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+
+
+
+
 
