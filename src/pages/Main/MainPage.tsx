@@ -9,6 +9,7 @@ import RunningLine from "../../components/RunningLine/RunningLine";
 
 export const MainPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  
   return (
     <Layout>
       <div className={styles.background_main}>
@@ -89,7 +90,15 @@ export const MainPage = () => {
               <div></div>
             </div>
           </div>
-          <RunningLine />
+          <RunningLine
+            items={[
+              <img src="/png/logo.png" alt="logo1" />,
+              <img src="/png/logo.png" alt="logo2" />,
+              <img src="/png/logo.png" alt="logo3" />,
+              <img src="/png/logo.png" alt="logo4" />,
+              <img src="/png/logo.png" alt="logo5" />,
+            ]}
+          />
         </div>
       </section>
 
