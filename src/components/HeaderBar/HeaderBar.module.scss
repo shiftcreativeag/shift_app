@@ -38,24 +38,6 @@
       }
     }
 
-    .button {
-      width: 219px;
-      height: 60px;
-      background-color: var(--green);
-      border: none;
-      border-radius: 38px;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 22px;
-      color: var(--primary);
-      cursor: pointer;
-
-      &:hover {
-        background-color: var(--green_dark);
-        transition: all 0.3s ease 0s;
-      }
-    }
-
     .menu_link{
       text-decoration: none;
       font-size: 40px;
