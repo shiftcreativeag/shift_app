@@ -4,6 +4,8 @@ import { Layout } from "../../components/Layout/Layout";
 import styles from "./MainPage.module.scss";
 import { ServiceCard } from "../../components/ServiceCard/ServiceCard";
 import { CaseCard } from "../../components/CaseCard/CaseCard";
+import { TariffCard } from "../../components/TariffCard/TariffCard";
+import { MemberCard } from "../../components/MemberCard/MemberCard";
 import { ContactForm } from "../../components/ContactForm/ContactForm";
 import ParticlesBackground from "../../components/Particles/ParticlesBackground";
 import { ContactFormMainPage } from "../../components/ContactForm/ContactFormMainPage";
@@ -45,12 +47,123 @@ export const MainPage = () => {
         <h4 className={styles.services_suptitle}>Услуги</h4>
         <h3 className={styles.services_title}>Что мы делаем</h3>
         <div className={styles.services_container}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <ServiceCard
+            title="Сайты"
+            description="Многостраничные сайты, корпоративные сайты"
+            price="от 100 000 ₽"
+            duration="от 14 дней"
+            iconName="sites"
+            includesList={[
+              "Дизайн десктопной версии",
+              "Адаптивы под планшет, мобильные телефоны",
+              "Верстка"
+            ]}
+          />
+
+          <ServiceCard
+            title="Лендинг"
+            description="Одностраничные сайты для промоакций, событий"
+            price="от 100 000 ₽"
+            duration="от 14 дней"
+            iconName="landings"
+            includesList={[
+              "Уникальный дизайн",
+              "Привлекающие CTA",
+              "Оптимизация конверсии"
+            ]}
+          />
+
+          <ServiceCard
+            title="Брендинг"
+            description="Разработка бренда, айдентики с нуля"
+            price="от 100 000 ₽"
+            duration="от 14 дней"
+            iconName="branding"
+            includesList={[
+              "Логотип и фирменный стиль",
+              "Гайдлайн по использованию",
+              "Брендбук"
+            ]}
+          />
+
+          <ServiceCard
+            title="SMM"
+            description="Продвижение в социальных сетях"
+            price="от 100 000 ₽"
+            duration="от 14 дней"
+            iconName="smm"
+            includesList={[
+              "Стратегия продвижения",
+              "Создание контента",
+              "Аналитика и отчёты"
+            ]}
+          />
+
+          <ServiceCard
+            title="Интернет-магазины"
+            description="Сайты для продаж товаров и услуг"
+            price="от 100 000 ₽"
+            duration="от 14 дней"
+            iconName="online-store"
+            includesList={[
+              "Каталог товаров",
+              "Удобная корзина",
+              "Интеграция с платежами"
+            ]}
+          />
+
+          <ServiceCard
+            title="Видео"
+            description="Создание видео-роликов"
+            price="от 100 000 ₽"
+            duration="от 14 дней"
+            iconName="video"
+            includesList={[
+              "Сценарий и съемка",
+              "Монтаж и эффекты",
+              "Финальный экспорт"
+            ]}
+          />
+
+          <ServiceCard
+            title="Полиграфия"
+            description="Печать, разработка макетов"
+            price="от 100 000 ₽"
+            duration="от 14 дней"
+            iconName="printing"
+            includesList={[
+              "Дизайн макетов",
+              "Подготовка к печати",
+              "Контроль качества"
+            ]}
+          />
+
+          <ServiceCard
+            title="SEO-оптимизация"
+            description="Повышение видимости в поисковых системах"
+            price="от 100 000 ₽"
+            duration="от 14 дней"
+            iconName="seo"
+            includesList={[
+              "Анализ сайта",
+              "Оптимизация контента",
+              "Построение ссылок"
+            ]}
+          />
+
+          <ServiceCard
+            title="Аудит безопасности"
+            description="Пентест, комплаенс, юридическое сопровождение"
+            price="от 100 000 ₽"
+            duration="от 14 дней"
+            iconName="security-audit"
+            includesList={[
+              "Проверка уязвимостей",
+              "Отчёты и рекомендации",
+              "Юридическая поддержка"
+            ]}
+          />
+
         </div>
       </section>
 
@@ -71,11 +184,36 @@ export const MainPage = () => {
         <h4 className={styles.portfolio_suptitle}>портфолио</h4>
         <h3 className={styles.portfolio_title}>Наши кейсы</h3>
         <div className={styles.portfolio_container}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <CaseCard
+            title="Название проекта"
+            description="Описание проекта"
+            tag="Брендинг"
+            imageUrl="/public/jpg/cases/case-2.jpg"
+          />
+          <CaseCard
+            title="Название проекта"
+            description="Описание проекта"
+            tag="Брендинг"
+            imageUrl="/public/jpg/cases/case-2.jpg"
+          />
+          <CaseCard
+            title="Название проекта"
+            description="Описание проекта"
+            tag="Брендинг"
+            imageUrl="/public/jpg/cases/case-2.jpg"
+          />
+          <CaseCard
+            title="Название проекта"
+            description="Описание проекта"
+            tag="Брендинг"
+            imageUrl="/public/jpg/cases/case-2.jpg"
+          />
+          <CaseCard
+            title="Название проекта"
+            description="Описание проекта"
+            tag="Брендинг"
+            imageUrl="/public/jpg/cases/case-2.jpg"
+          />
         </div>
       </section>
 
@@ -108,9 +246,46 @@ export const MainPage = () => {
         <h4 className={styles.price_suptitle}>тарифы</h4>
         <h3 className={styles.price_title}>Пакеты услуг</h3>
         <div className={styles.price_container}>
-          <div></div>
-          <div></div>
-          <div></div>
+          <TariffCard
+            title="Старт"
+            subtitle="Подходит для быстрого запуска бизнеса"
+            iconName="start"
+            features={[
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: false },
+              { text: 'Описание, что входит в тариф', included: false },
+            ]}
+          />
+          <TariffCard
+            title="Стандарт"
+            subtitle="Подходит для быстрого запуска бизнеса"
+            iconName="standart"
+            features={[
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: false },
+              { text: 'Описание, что входит в тариф', included: false },
+            ]}
+          />
+          <TariffCard
+            title="Премиум"
+            subtitle="Подходит для быстрого запуска бизнеса"
+            iconName="premium"
+            features={[
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: true },
+              { text: 'Описание, что входит в тариф', included: false },
+              { text: 'Описание, что входит в тариф', included: false },
+            ]}
+          />
+
         </div>
       </section>
 
@@ -136,10 +311,37 @@ export const MainPage = () => {
           «Работаем на результат, опираемся <br /> на экспертизу и современные
           решения»
         </h4>
-        <div className={styles.team_container}>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div className={styles.team_members}>
+          <MemberCard
+            name="Иван Иванов"
+            role="Директор"
+            imageName="member"
+          />
+          <MemberCard
+            name="Иван Иванов"
+            role="Директор"
+            imageName="member"
+          />
+          <MemberCard
+            name="Иван Иванов"
+            role="Директор"
+            imageName="member"
+          />
+          <MemberCard
+            name="Иван Иванов"
+            role="Директор"
+            imageName="member"
+          />
+          <MemberCard
+            name="Иван Иванов"
+            role="Директор"
+            imageName="member"
+          />
+          <MemberCard
+            name="Иван Иванов"
+            role="Директор"
+            imageName="member"
+          />
         </div>
       </section>
 
@@ -189,25 +391,6 @@ export const MainPage = () => {
       </section>
 
 
-      <ServiceCard
-        title="Сайты"
-        description="Многостраничные сайты, корпоративные сайты"
-        price="от 100 000 ₽"
-        duration="от 14 дней"
-        iconName="sites"
-        includesList={[
-          "Дизайн десктопной версии",
-          "Адаптивы под планшет, мобильные телефоны",
-          "Верстка"
-        ]}
-      />
-
-      <CaseCard
-        title="Название проекта"
-        description="Описание проекта"
-        tag="Брендинг"
-        imageUrl="/public/jpg/cases/case-2.jpg"
-      />
     </Layout>
   );
 };

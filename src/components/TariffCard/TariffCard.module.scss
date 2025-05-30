@@ -1,0 +1,68 @@
+.tariffCard {
+  border: 1px solid var(--secondary);
+  padding: 30px 20px;
+  border-radius: 4px;
+  color: var(--secondary);
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+
+  .icon {
+    img {
+      width: 55px;
+      height: auto;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  gap: 20px;
+  align-items: end;
+  padding-bottom: 30px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.features {
+  flex: 50%;
+  list-style: none;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.included {
+  color: var(--secondary);
+}
+
+.excluded {
+  color: var(--gray);
+}
+
+.button {
+  margin-top: auto;
+}

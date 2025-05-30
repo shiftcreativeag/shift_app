@@ -1,0 +1,31 @@
+.memberCard {
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+  max-width: 219px;
+}
+
+.imageWrapper {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 219px;
+  height: 219px;
+  margin: 0 auto 16px; /* Центруем изображение */
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.role {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--primary);
+}

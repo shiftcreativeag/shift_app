@@ -29,7 +29,7 @@
 }
 
 .cardFront {
-  background: #f5f5ff;
+  background: var(--light-white);
   display: flex;
   flex-direction: column;
 }

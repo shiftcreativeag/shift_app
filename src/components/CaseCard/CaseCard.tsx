@@ -15,65 +15,15 @@ export const CaseCard: React.FC<CaseCardProps> = ({
 	imageUrl
 }) => {
 	return (
-		<div className={styles.wrap}>
-			<div className={styles.cardContainer}>
-				<div className={styles.cardWrapper}>
-					<span className={styles.tag}>{tag}</span>
-					<div className={styles.imageContainer}>
-						<img src={imageUrl} alt={title} className={styles.image} />
-					</div>
-					<div className={styles.content}>
-						<h3 className={styles.title}>{title}</h3>
-						<p className={styles.description}>{description}</p>
-					</div>
+		<div className={styles.cardContainer}>
+			<div className={styles.cardWrapper}>
+				<span className={styles.tag}>{tag}</span>
+				<div className={styles.imageContainer}>
+					<img src={imageUrl} alt={title} className={styles.image} />
 				</div>
-			</div>
-			<div className={styles.cardContainer}>
-				<div className={styles.cardWrapper}>
-					<span className={styles.tag}>{tag}</span>
-					<div className={styles.imageContainer}>
-						<img src={imageUrl} alt={title} className={styles.image} />
-					</div>
-					<div className={styles.content}>
-						<h3 className={styles.title}>{title}</h3>
-						<p className={styles.description}>{description}</p>
-					</div>
-				</div>
-			</div>
-			<div className={styles.cardContainer}>
-				<div className={styles.cardWrapper}>
-					<span className={styles.tag}>{tag}</span>
-					<div className={styles.imageContainer}>
-						<img src={imageUrl} alt={title} className={styles.image} />
-					</div>
-					<div className={styles.content}>
-						<h3 className={styles.title}>{title}</h3>
-						<p className={styles.description}>{description}</p>
-					</div>
-				</div>
-			</div>
-			<div className={styles.cardContainer}>
-				<div className={styles.cardWrapper}>
-					<span className={styles.tag}>{tag}</span>
-					<div className={styles.imageContainer}>
-						<img src={imageUrl} alt={title} className={styles.image} />
-					</div>
-					<div className={styles.content}>
-						<h3 className={styles.title}>{title}</h3>
-						<p className={styles.description}>{description}</p>
-					</div>
-				</div>
-			</div>
-			<div className={styles.cardContainer}>
-				<div className={styles.cardWrapper}>
-					<span className={styles.tag}>{tag}</span>
-					<div className={styles.imageContainer}>
-						<img src={imageUrl} alt={title} className={styles.image} />
-					</div>
-					<div className={styles.content}>
-						<h3 className={styles.title}>{title}</h3>
-						<p className={styles.description}>{description}</p>
-					</div>
+				<div className={styles.content}>
+					<h3 className={styles.title}>{title}</h3>
+					<p className={styles.description}>{description}</p>
 				</div>
 			</div>
 		</div>
