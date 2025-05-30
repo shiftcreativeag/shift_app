@@ -1,0 +1,19 @@
+.marquee {
+  width: 100%;
+}
+
+.line {
+  display: flex;
+  gap: 175px; 
+  min-width: max-content; 
+}
+
+.line span {
+  flex-shrink: 0;
+  font-size: 50px;
+  font-weight: 800;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 2px #20C0FF;
+  padding-bottom: 40px;
+}

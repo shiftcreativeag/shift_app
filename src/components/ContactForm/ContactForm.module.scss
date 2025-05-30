@@ -200,8 +200,6 @@
   margin-top: 2px;
 }
 
-
-
 .submit_button {
   padding: 12px;
   background: var(--green);
@@ -220,7 +218,152 @@
   }
 }
 
+//стили для формы в секции контакты  
+.form_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  color: var(--primary);
+
+  &_fields {
+    display: flex;
+    gap: 16px;
+  }
+
+  &_field{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+
+    
+    & input,
+    textarea {
+      height: 44px;
+      padding-left: 10px;
+      border: 1px solid var(--primary);
+      border-radius: 38px;
+      background-color: var(--light-white);
+      transition: var(--transition-duration);
   
+      &:focus {
+        border-color: var(--primary);
+        outline: none;
+      }
+    }
+  
+    & textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+  }
+
+  &_submit_button {
+    background: var(--green);
+    color: white;
+    border: none;
+    height: 44px;
+    border-radius: 38px;
+    cursor: pointer;
+    transition: var(--transition-duration);
+    font-weight: bold;
+    width: 33%;
+  
+    &:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+
+  &_checkbox_label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    padding-bottom: 20px;
+    color: var(--white);
+  
+    .form_main_checkbox_custom {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--white);
+      border-radius: 3px;
+      position: relative;
+      transition: var(--transition-duration);
+  
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 5px;
+        top: 1px;
+        width: 4px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+  
+    input[type="checkbox"] {
+      display: none;
+  
+      &:checked + .form_main_checkbox_custom {
+        background-color: var(--primary);
+        border-color: var(--white);
+  
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+// Модальное окно успешной отправки формы
+.success_сontainer {
+  text-align: center;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.success_title {
+  color: var(--primary);
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  &::after {
+    content: "✓";
+    color: var(--green);
+    font-size: 28px;
+  }
+}
+
+.success_text {
+  color: var(--primary);
+  margin-bottom: 30px;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+
+
+
+
 
 // Анимации
 @keyframes fadeIn {
@@ -258,36 +401,4 @@
     top: 10px;
     right: 10px;
   }
-}
-
-// Модальное окно успешной отправки формы
-.success_сontainer {
-  text-align: center;
-  padding: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.success_title {
-  color: var(--primary);
-  font-size: 40px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  &::after {
-    content: "✓";
-    color: var(--green);
-    font-size: 28px;
-  }
-}
-
-.success_text {
-  color: var(--primary);
-  margin-bottom: 30px;
-  line-height: 1.5;
-  font-size: 18px;
 }
