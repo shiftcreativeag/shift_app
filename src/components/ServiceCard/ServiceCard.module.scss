@@ -1,0 +1,112 @@
+.cardWrapper {
+  perspective: 1000px;
+  max-width: 456px;
+  width: 100%;
+  height: 236px; // Фиксированная высота для корректной анимации
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+
+  .cardWrapper:hover & {
+    transform: rotateY(180deg);
+  }
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.cardFront {
+  background: #f5f5ff;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardBack {
+  background: var(--primary);
+  transform: rotateY(180deg);
+  display: flex;
+}
+
+.tags {
+  display: flex;
+  gap: 11px;
+  padding-bottom: 75px;
+}
+
+.tag {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: var(--primary);
+  white-space: nowrap;
+  line-height: normal;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 184px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+  padding-bottom: 11px;
+}
+
+.description {
+  font-size: 16px;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.includesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 20px;
+}
+
+.includesItem {
+  position: relative;
+  padding-left: 24px;
+  font-size: 18px;
+  color: var(--white);
+  line-height: 1.4;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--white);
+  }
+}
