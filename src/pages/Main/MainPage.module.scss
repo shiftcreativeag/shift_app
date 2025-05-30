@@ -1,3 +1,20 @@
+.background_main{
+  position: relative;
+  width: 100%;
+  height: 654px;
+
+  &_particles{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+
 .main {
   margin-top: 120px;
   position: relative; 
@@ -6,11 +23,13 @@
   justify-content: center; 
   align-items: center; 
   height: 654px; 
+  z-index: 1;
 
   &_title_container{
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
   }
 
   &_title {
@@ -26,6 +45,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 104px;
+    user-select: none;
   }
 
   &_text {
@@ -38,6 +58,7 @@
     font-weight: 500;
     writing-mode: sideways-lr;
     margin-top: 104px;
+    user-select: none;
   }
 
   &_subtext{
@@ -48,14 +69,15 @@
     color: var(--white);
     font-size: 30px;
     font-weight: 500;
+    user-select: none;
   }
 
   &_background {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    left: 10px;
+    width: 1400px;
+    height: 654px;
     object-fit: cover;
     z-index: 0;
   }
@@ -70,6 +92,7 @@
     justify-content: space-around;
     align-self: end;
     list-style-type: disc;
+    user-select: none;
     
     &_item {
       color: var(--gray);
