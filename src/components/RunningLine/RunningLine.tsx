@@ -1,15 +1,20 @@
 import Marquee from "react-fast-marquee";
 import styles from "./RunningLine.module.scss";
+import type { ReactNode } from "react";
 
-const RunningLine = () => {
+interface RunningLineProps {
+  items: (string | ReactNode)[];
+}
+
+const RunningLine = ({ items }: RunningLineProps) => {
   return (
-    <Marquee speed={200} gradient={false} className={styles.marquee}>
+    <Marquee speed={50} gradient={false} className={styles.marquee}>
       <div className={styles.line}>
-        <span>ЛОГО1</span>
-        <span>ЛОГО2</span>
-        <span>ЛОГО3</span>
-        <span>ЛОГО4</span>
-        <span>ЛОГО5</span>
+        {items.map((item, index) => (
+          <div className={styles.item} key={index}>
+            {item}
+          </div>
+        ))}
       </div>
     </Marquee>
   );
