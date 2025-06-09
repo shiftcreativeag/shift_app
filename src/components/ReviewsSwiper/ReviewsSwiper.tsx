@@ -1,14 +1,12 @@
 import React from 'react';
 import { Navigation, FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as SwiperClass } from 'swiper';
 import { ReviewCard } from '../ReviewCard/ReviewCard';
 import './ReviewsSwiper.scss';
 
 
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
+import '../../../node_modules/swiper/swiper.css'
+import '../../../node_modules/swiper/modules/free-mode.css'
 
 export const ReviewsSwiper: React.FC = () => {
   return (
