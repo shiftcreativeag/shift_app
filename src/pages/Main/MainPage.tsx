@@ -188,31 +188,31 @@ export const MainPage = () => {
             title="Название проекта"
             description="Описание проекта"
             tag="Брендинг"
-            imageUrl="/public/jpg/cases/case-2.jpg"
+            imageUrl="/jpg/cases/case-2.jpg"
           />
           <CaseCard
             title="Название проекта"
             description="Описание проекта"
             tag="Брендинг"
-            imageUrl="/public/jpg/cases/case-2.jpg"
+            imageUrl="/jpg/cases/case-2.jpg"
           />
           <CaseCard
             title="Название проекта"
             description="Описание проекта"
             tag="Брендинг"
-            imageUrl="/public/jpg/cases/case-2.jpg"
+            imageUrl="/jpg/cases/case-2.jpg"
           />
           <CaseCard
             title="Название проекта"
             description="Описание проекта"
             tag="Брендинг"
-            imageUrl="/public/jpg/cases/case-2.jpg"
+            imageUrl="/jpg/cases/case-2.jpg"
           />
           <CaseCard
             title="Название проекта"
             description="Описание проекта"
             tag="Брендинг"
-            imageUrl="/public/jpg/cases/case-2.jpg"
+            imageUrl="/jpg/cases/case-2.jpg"
           />
         </div>
       </section>

@@ -18,7 +18,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ name, company, review, a
 					<p className={styles.company}>{company}</p>
 				</div>
 				<div className={styles.avatar_wrap}>
-					<img className={styles.avatar} src={`/public/jpg/team/${avatarUrl}.jpg`} alt={`${name} avatar`} />
+					<img className={styles.avatar} src={`/jpg/team/${avatarUrl}.jpg`} alt={`${name} avatar`} />
 				</div>
 			</div>
 			<p className={styles.review}>{review}</p>
