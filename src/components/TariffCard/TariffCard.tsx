@@ -27,25 +27,15 @@ export const TariffCard: React.FC<TariffCardProps> = ({
 
 	return (
 		<div className={styles.tariffCard}>
-			<div className={styles.main}>
-				<div className={styles.header}>
+			<div className={styles.header}>
+				<div className={styles.header_top}>
 					<h3 className={styles.title}>{title}</h3>
 					<div className={styles.icon}>
 						<img src={`/public/svg/tariffs/${iconName}.svg`} alt={title} />
 					</div>
 				</div>
 				<p className={styles.subtitle}>{subtitle}</p>
-				<div className={styles.button}>
-					<CustomButton
-						backgroundColor={"var(--white)"}
-						color={"var(--primary)"}
-						border="1px solid var(--primary)"
-						label={"Оставить заявку"}
-						onClick={() => setIsFormOpen(true)}
-					/>
-				</div>
 			</div>
-
 			<ul className={styles.features}>
 				{features.map(({ text, included }, idx) => (
 					<li
@@ -57,7 +47,15 @@ export const TariffCard: React.FC<TariffCardProps> = ({
 					</li>
 				))}
 			</ul>
-
+			<div className={styles.button}>
+				<CustomButton
+					backgroundColor={"var(--white)"}
+					color={"var(--primary)"}
+					border="1px solid var(--primary)"
+					label={"Оставить заявку"}
+					onClick={() => setIsFormOpen(true)}
+				/>
+			</div>
 			{isFormOpen && <ContactForm onClose={() => setIsFormOpen(false)} />}
 		</div>
 	);

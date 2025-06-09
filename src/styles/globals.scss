@@ -11,3 +11,8 @@ body {
   font-weight: 400;
   font-size: 18px;
 }
+
+// Добавляем стили для .swiper-slide-next
+:global(.swiper-slider-next) {
+  // Здесь можно задать дополнительные стили, если нужно
+}

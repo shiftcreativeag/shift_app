@@ -9,6 +9,8 @@
   font-weight: 600;
   width: fit-content;
   line-height: normal;
+  outline: none;
+  white-space: nowrap;
 
   &:hover {
     background-color: var(--green_dark);
@@ -17,5 +19,17 @@
 
   &:active {
     transform: translateY(0);
+  }
+
+  &:has(img) {
+    padding: 14px;
+    border-radius: 50%;
+    display: flex;
+    height: 50px;
+
+    @media (max-width: 480px) {
+      padding: 10px;
+      height: 40px;
+    }
   }
 }

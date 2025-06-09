@@ -1,0 +1,21 @@
+.swiper-slide {
+  width: auto !important;
+}
+
+.review-slider-nav {
+  background: none;
+  background-color: none;
+  border: none;
+  color: var(--green);
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+
+  &.swiper-button-disabled {
+    color: var(--white);
+  }
+
+  @media (max-width: 740px) {
+    display: none;
+  }
+}

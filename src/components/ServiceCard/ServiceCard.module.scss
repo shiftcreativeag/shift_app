@@ -26,6 +26,10 @@
   backface-visibility: hidden;
   border-radius: 4px;
   padding: 20px;
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
 }
 
 .cardFront {
@@ -44,6 +48,10 @@
   display: flex;
   gap: 11px;
   padding-bottom: 75px;
+
+  @media (max-width: 480px) {
+    padding-bottom: 60px;
+  }
 }
 
 .tag {
@@ -54,6 +62,10 @@
   color: var(--primary);
   white-space: nowrap;
   line-height: normal;
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
 }
 
 .icon {
@@ -65,6 +77,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 935px) {
+    width: 111px;
+    height: 96px;
+  }
 }
 
 .title {
@@ -73,6 +90,11 @@
   color: var(--primary);
   margin: 0;
   padding-bottom: 11px;
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
 }
 
 .description {

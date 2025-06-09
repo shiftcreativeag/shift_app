@@ -8,7 +8,12 @@ interface RunningLineProps {
 
 const RunningLine = ({ items }: RunningLineProps) => {
   return (
-    <Marquee speed={50} gradient={false} className={styles.marquee}>
+    <Marquee
+      speed={50}
+      gradient={false}
+      className={styles.marquee}
+      autoFill={true}
+    >
       <div className={styles.line}>
         {items.map((item, index) => (
           <div className={styles.item} key={index}>

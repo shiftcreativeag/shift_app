@@ -3,9 +3,10 @@ import styles from "./BurgerMenu.module.scss";
 
 interface BurgerMenuProps {
   children?: React.ReactNode; // Дочерние элементы (пункты меню)
+  isScrolled?: boolean
 }
 
-export const BurgerMenu: React.FC<BurgerMenuProps> = ({ children }) => {
+export const BurgerMenu: React.FC<BurgerMenuProps> = ({ children, isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -22,11 +23,10 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ children }) => {
       >
         <span className={styles.line}></span>
         <span className={styles.line}></span>
-        <span className={styles.line}></span>
       </button>
 
       {/* Выпадающее меню */}
-      <nav className={`${styles.menu} ${isOpen ? styles.menu_open : ""}`}>
+      <nav className={`${styles.menu} ${isOpen ? styles.menu_open : ""} ${isScrolled ? styles.scrolled : ''}`}>
         {children}
       </nav>
     </div>

@@ -2,13 +2,17 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 import styles from "./ContactForm.module.scss";
+
+// Инициализация EmailJS (вынесите в отдельный конфиг при необходимости)
+emailjs.init("xmgjD7eb7LMlZ-q0q"); // Замените на ваш Public Key из EmailJS
 
 const formSchema = z.object({
   name: z.string().min(2, "Имя должно содержать минимум 2 символа"),
   phone: z.string().min(10, "Некорректный номер телефона"),
   comment: z.string().optional(),
-  services: z.array(z.string()).min(1, "Выберите хотя бы одну услугу"),
+  services: z.array(z.string()).min(0, "Выберите хотя бы одну услугу"),
   agree: z.boolean().refine((val) => val, "Необходимо согласие"),
 });
 
@@ -20,6 +24,7 @@ interface ContactFormProps {
 
 export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -35,9 +40,32 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
 
   const selectedServices = watch("services") || [];
 
-  const onSubmit = (data: FormData) => {
-    console.log("Форма отправлена:", data);
-    setIsSubmitted(true);
+  const onSubmit = async (data: FormData) => {
+    setIsLoading(true);
+    try {
+      // Подготовка данных для EmailJS
+      const templateParams = {
+        name: data.name,
+        phone: data.phone,
+        comment: data.comment || "Не указано",
+        services: data.services.join(", ")
+      };
+
+      // Отправка через EmailJS
+      await emailjs.send(
+        "service_8joqnbe", // Замените на ваш Service ID
+        "template_3b1u8cp", // Замените на ваш Template ID
+        templateParams
+      );
+
+      console.log("Форма отправлена:", data);
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Ошибка отправки:", error);
+      alert("Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -57,11 +85,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   const serviceOptions = [
     "Брендинг",
     "Айдентика",
-    "Интернет-магазин",
     "Сайт",
+    "Интернет-магазин",
     "СММ",
+    "SEO-оптимизация",
     "Видео",
+    "Аудит безопасности",
     "Лендинг",
+    "Полиграфия"
   ];
 
   if (isSubmitted) {
@@ -76,7 +107,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
             onClick={onClose}
             aria-label="Закрыть"
           >
-            &times;
           </button>
           <div className={styles.success_сontainer}>
             <h2 className={styles.success_title}>Ваша заявка отправлена</h2>
@@ -101,11 +131,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
             onClick={onClose}
             aria-label="Закрыть"
           >
-            &times;
           </button>
 
           <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-            <div>
+            <div className={styles.form_left}>
               <h2 className={styles.form_title}>Оставьте заявку</h2>
               <p className={styles.form_subtitle}>
                 Наш менеджер свяжется с Вами для обсуждения проекта
@@ -126,12 +155,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
                     {service}
                   </label>
                 ))}
-                {errors.services && (
-                  <span className={styles.error}>
-                    {errors.services.message}
-                  </span>
-                )}
               </div>
+              {errors.services && (
+                <span className={styles.error}>
+                  {errors.services.message}
+                </span>
+              )}
             </div>
 
             <div>
@@ -160,23 +189,36 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
                 />
               </div>
 
-              <label className={styles.checkbox_label}>
-                <input type="checkbox" {...register("agree")} />
-                <span className={styles.checkbox_custom}></span>
-                Отправить форму, соглашаясь на обработку персональных данных и
-                политикой конфиденциальности.
+              <div className={styles.field}>
+                <label className={styles.checkbox_label}>
+                  <input type="checkbox" {...register("agree")} />
+                  <span className={styles.checkbox_custom}></span>
+                  Отправить форму, соглашаясь на обработку персональных данных и Политикой конфиденциальности.
+
+                </label>
                 {errors.agree && (
                   <span className={styles.error}>{errors.agree.message}</span>
                 )}
-              </label>
-              <button
-                type="submit"
-                className={styles.submit_button}
-                disabled={!isValid}
-                title={!isValid ? "Заполните все обязательные поля" : ""}
-              >
-                {isValid ? "Отправить" : "Заполните обязательные поля"}
-              </button>
+              </div>
+
+              {isLoading ? (
+                <div className={styles.loader}>
+                  <div className={styles.spinner} />
+                  <span>Форма отправляется. Пожалуйста, подождите.</span>
+                </div>
+
+              ) : (
+                <button
+                  type="submit"
+                  className={styles.submit_button}
+                  disabled={!isValid}
+                  title={!isValid ? "Заполните все обязательные поля" : ""}
+                >
+                  {isValid ? "Отправить" : "Заполните обязательные поля"}
+                </button>
+              )}
+
+
             </div>
           </form>
         </div>

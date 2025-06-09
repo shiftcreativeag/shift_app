@@ -1,0 +1,76 @@
+.card {
+  background: var(--white);
+  border-radius: 4px;
+  padding: 30px 20px;
+  max-width: 438px;
+  min-height: 283px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+
+  :global(.swiper-slide-next) & {
+    background-color: var(--light-white); // Цвет, когда карточка в следующем слайде
+  }
+
+  @media (max-width: 980px) {
+    max-width: 326px;
+    min-height: 201px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+
+  @media (max-width: 980px) {
+    margin-bottom: 32px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name {
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 24px;
+
+  @media (max-width: 980px) {
+    font-size: 20px;
+  }
+}
+
+.company {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 18px;
+
+  @media (max-width: 980px) {
+    font-size: 14px;
+  }
+}
+
+.avatar_wrap {
+  width: 61px;
+  height: 61px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar {
+  object-fit: cover;
+}
+
+.review {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--primary);
+
+  @media (max-width: 980px) {
+    font-size: 14px;
+  }
+}

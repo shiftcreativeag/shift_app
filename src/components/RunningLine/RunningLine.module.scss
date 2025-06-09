@@ -5,10 +5,10 @@
 
 .line {
   display: flex;
-//   align-items: center;
-//   padding: 0 clamp(1rem, 4vw, 3rem); 
-//   gap: clamp(2rem, 5vw, 6rem);       
-//   min-width: max-content;
+  //   align-items: center;
+  //   padding: 0 clamp(1rem, 4vw, 3rem);
+  //   gap: clamp(2rem, 5vw, 6rem);
+  //   min-width: max-content;
 }
 
 // .item {
@@ -24,4 +24,5 @@
   width: auto;
   object-fit: contain;
   display: block;
+  padding: 0 clamp(1.25rem, -0.0704rem + 5.6338vw, 5rem);
 }

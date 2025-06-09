@@ -5,6 +5,7 @@ interface CustomButtonProps {
   backgroundColor?: string;
   color?: string;
   label: string;
+  icon?: React.ReactNode; // новый пропс для иконки
   border?: string;
   onClick: () => void;
 }
@@ -14,6 +15,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
   color = "var(--primary)",
   border,
   label,
+  icon,
   onClick,
 }) => {
   return (
@@ -22,7 +24,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
       style={{ backgroundColor, color, border }}
       onClick={onClick}
     >
-      {label}
+      {icon || label}
     </button>
   );
 };

@@ -3,25 +3,59 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 159px;
+  gap: 65px;
   justify-content: space-between;
-  padding: 25px 19px 14px 19px;
+  padding: 25px 0 14px;
 
   &_content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
+    max-width: 1440px;
+    margin: auto;
+    width: 100%;
+    padding: 0 clamp(0.625rem, -0.0893rem + 1.4881vw, 1.25rem);
+
+    @media (max-width: 1000px) {
+      align-items: start;
+    }
+
+    &_logo {
+      flex-shrink: 0;
+    }
 
     &_nav {
       display: flex;
       gap: 40px;
       align-items: center;
 
+      @media (max-width: 1000px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+      }
+
+      @media (max-width: 700px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      @media (max-width: 600px) {
+        grid-template-columns: 100%;
+        gap: 20px;
+      }
+
       &_link {
         color: var(--primary);
         font-size: 16px;
         font-weight: 400;
         text-decoration: none;
+        white-space: nowrap;
+
+        @media (max-width: 380px) {
+          font-size: 14px;
+        }
       }
     }
 
@@ -29,30 +63,77 @@
       display: flex;
       gap: 35px;
       align-items: center;
+      flex-shrink: 0;
+
+      @media (max-width: 380px) {
+        gap: 20px;
+      }
     }
   }
 
   &_line {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
+    gap: 70px;
+    max-width: 1440px;
+    margin: auto;
+    width: 100%;
+    padding: 0 clamp(0.625rem, -0.0893rem + 1.4881vw, 1.25rem);
+
+    @media (max-width: 520px) {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
 
     &_left {
       font-size: 12px;
       color: var(--primary);
       font-weight: 400;
+
+      @media (max-width: 520px) {
+        text-align: center;
+      }
     }
 
     &_right {
       font-size: 12px;
       color: var(--primary);
       font-weight: 400;
+      text-align: end;
+
+      @media (max-width: 520px) {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 16px;
+      }
+
+      &_license {
+        max-width: 178px;
+        text-align: end;
+        color: var(--gray);
+        padding-bottom: 10px;
+
+        a {
+          color: var(--gray);
+          text-decoration: none;
+        }
+
+        @media (max-width: 520px) {
+          text-align: center;
+        }
+      }
 
       &_link {
         color: var(--primary);
         font-size: 12px;
         font-weight: 400;
         text-decoration: none;
+
+        @media (max-width: 520px) {
+          text-align: center;
+        }
       }
     }
   }

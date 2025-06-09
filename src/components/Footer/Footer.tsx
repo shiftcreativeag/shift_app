@@ -6,9 +6,11 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer_content}>
-        <Link to="/">
-          <img src="/png/logo.png" alt="logo" />
-        </Link>
+        <div className={styles.footer_content_logo}>
+          <Link to="/">
+            <img src="/png/logo.png" alt="logo" />
+          </Link>
+        </div>
 
         <div className={styles.footer_content_nav}>
           <a href="#about_us" className={styles.footer_content_nav_link}>
@@ -48,13 +50,16 @@ export const Footer = () => {
       </div>
 
       <div className={styles.footer_line}>
-          <p className={styles.footer_line_left}>
-            © SHIFT Creative, 2025. Все права защищены.
-          </p>
+        <p className={styles.footer_line_left}>
+          © SHIFT Creative, 2025. Все права защищены.
+        </p>
         <div className={styles.footer_line_right}>
-          <a href="#" className={styles.footer_line_right_link}>
+          <p className={styles.footer_line_right_license}>
+            Интерактивные частицы: <a href="https://particles.js.org" target="_blank">https://particles.js.org/</a>
+          </p>
+          <Link to="/documents" className={styles.footer_line_right_link}>
             Юридическая информация
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
