@@ -79,7 +79,7 @@ export const HeaderBar = () => {
             color={"var(--primary)"}
             border="2px solid var(--primary)"
             label={"Оставить заявку"}
-            icon={width < 768 && <img src='../../public/svg/email.svg' alt="" />}
+            icon={width < 768 && <img src='../../svg/email.svg' alt="" />}
             onClick={() => setIsFormOpen(true)}
           />
         </div>

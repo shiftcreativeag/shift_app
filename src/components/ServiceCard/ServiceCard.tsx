@@ -27,7 +27,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 						<div className={styles.tag}>{duration}</div>
 					</div>
 					<div className={styles.icon}>
-						<img src={`/public/svg/services/${iconName}.svg`} alt={title} />
+						<img src={`/svg/services/${iconName}.svg`} alt={title} />
 					</div>
 					<h3 className={styles.title}>{title}</h3>
 					<p className={styles.description}>{description}</p>

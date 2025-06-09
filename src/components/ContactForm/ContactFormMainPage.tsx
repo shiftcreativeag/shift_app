@@ -64,7 +64,7 @@ export const ContactFormMainPage: React.FC<ContactFormProps> = ({ onClose }) => 
     <>
       {!isSubmitted ? (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form_main}>
-          {!isLoading ? (
+          {isLoading ? (
             <div className={`${styles.loader} ${styles.loader_contact}`}>
               <div className={`${styles.spinner} ${styles.spinner_contact}`} />
               <span>Форма отправляется. Пожалуйста, подождите.</span>

@@ -31,7 +31,7 @@ export const TariffCard: React.FC<TariffCardProps> = ({
 				<div className={styles.header_top}>
 					<h3 className={styles.title}>{title}</h3>
 					<div className={styles.icon}>
-						<img src={`/public/svg/tariffs/${iconName}.svg`} alt={title} />
+						<img src={`/svg/tariffs/${iconName}.svg`} alt={title} />
 					</div>
 				</div>
 				<p className={styles.subtitle}>{subtitle}</p>
@@ -43,7 +43,7 @@ export const TariffCard: React.FC<TariffCardProps> = ({
 						className={`${styles.feature} ${included ? styles.included : styles.excluded
 							}`}
 					>
-						{included ? <img src={`/public/svg/check.svg`} /> : <img src={`/public/svg/cross.svg`} />} <span>{text}</span>
+						{included ? <img src={`/svg/check.svg`} /> : <img src={`/svg/cross.svg`} />} <span>{text}</span>
 					</li>
 				))}
 			</ul>
