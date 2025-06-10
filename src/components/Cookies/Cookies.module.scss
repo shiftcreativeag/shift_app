@@ -1,0 +1,45 @@
+// Cookies.module.scss
+.cookies_container {
+  position: fixed;
+  bottom: 20px;
+  left: clamp(0.625rem, -0.0893rem + 1.4881vw, 1.25rem);
+  max-width: 456px;
+  width: 100%;
+  background-color: var(--light-white);
+  border-radius: 4px;
+  padding: 30px;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    left: clamp(0.625rem, -0.0893rem + 1.4881vw, 1.25rem);
+    right: clamp(0.625rem, -0.0893rem + 1.4881vw, 1.25rem);
+    max-width: none;
+    width: auto;
+  }
+}
+
+.cookies_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--dark-blue);
+}
+
+.cookies_text {
+  font-size: 14px;
+  color: var(--dark-blue);
+  margin-bottom: 30px;
+}
+
+.cookies_button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  button {
+    max-width: 396px;
+    width: 100%;
+    height: 40px;
+    padding: 10px 30px;
+  }
+}
