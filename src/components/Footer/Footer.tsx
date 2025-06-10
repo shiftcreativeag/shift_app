@@ -8,7 +8,7 @@ export const Footer = () => {
       <div className={styles.footer_content}>
         <div className={styles.footer_content_logo}>
           <Link to="/">
-            <img src="/png/logo.png" alt="logo" />
+            <img src="/svg/logo.svg" alt="logo" />
           </Link>
         </div>
 

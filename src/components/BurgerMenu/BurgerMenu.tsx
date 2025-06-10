@@ -6,7 +6,7 @@ interface BurgerMenuProps {
   isScrolled?: boolean
 }
 
-export const BurgerMenu: React.FC<BurgerMenuProps> = ({ children, isScrolled }) => {
+export const BurgerMenu: React.FC<BurgerMenuProps> = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -27,7 +27,40 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ children, isScrolled }) 
 
       {/* Выпадающее меню */}
       <nav className={`${styles.menu} ${isOpen ? styles.menu_open : ""} ${isScrolled ? styles.scrolled : ''}`}>
-        {children}
+        <a href="#about_us" className={styles.menu_link} onClick={() => setIsOpen(false)}>
+          О студии
+        </a>
+        <a href="#services" className={styles.menu_link} onClick={() => setIsOpen(false)}>
+          Услуги
+        </a>
+        <a href="#portfolio" className={styles.menu_link} onClick={() => setIsOpen(false)}>
+          Портфолио
+        </a>
+        <a href="#price" className={styles.menu_link} onClick={() => setIsOpen(false)}>
+          Тарифы
+        </a>
+        <a href="#team" className={styles.menu_link} onClick={() => setIsOpen(false)}>
+          Команда
+        </a>
+        <a href="#contacts" className={styles.menu_link} onClick={() => setIsOpen(false)}>
+          Контакты
+        </a>
+        <div className={styles.socials}>
+          <p className={styles.socials_title}>E-mail:</p>
+          <div className={styles.socials_links}>
+            <a href="#contacts" className={styles.menu_link} onClick={() => setIsOpen(false)}>
+              <img
+                src="/svg/icon_tg.svg"
+                alt="telegram"
+                width={50}
+                height={50}
+              />
+            </a>
+            <a href="#contacts" className={styles.menu_link} onClick={() => setIsOpen(false)}>
+              <img src="/svg/icon_vk.svg" alt="vk" width={50} height={50} />
+            </a>
+          </div>
+        </div>
       </nav>
     </div>
   );
