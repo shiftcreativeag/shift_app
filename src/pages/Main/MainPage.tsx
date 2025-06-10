@@ -174,7 +174,7 @@ export const MainPage = () => {
         <CustomButton
           backgroundColor={"var(--green)"}
           color={"var(--primary)"}
-          label={"Рассказать нам о своем новом проекте"}
+          label={"Рассказать нам о своем проекте"}
           onClick={() => setIsFormOpen(true)}
         />
         {isFormOpen && <ContactForm onClose={() => setIsFormOpen(false)} />}

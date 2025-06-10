@@ -183,6 +183,7 @@
   justify-content: space-between;
   gap: 60px;
   padding: clamp(3.125rem, 2.4648rem + 2.8169vw, 5rem) 0;
+  overflow: hidden;
 
   @media (max-width: 900px) {
     flex-direction: column;
