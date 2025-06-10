@@ -21,6 +21,8 @@ const Cookies: React.FC<CookiesProps> = ({ onClose }) => {
 		// Add logic to decline cookie acceptance here
 	}; */
 
+
+	if (isAccepted) return null;
 	return (
 		<div className={styles.cookies_container}>
 			<div className={styles.cookies_content}>
