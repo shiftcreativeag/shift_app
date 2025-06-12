@@ -33,19 +33,16 @@ export const HeaderBar = () => {
 
   return (
     <>
-      <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${!isHome ? styles.separated : ""}`}>
+      <header className={`${styles.header} ${isScrolled ? styles.separated : ""} ${!isHome ? styles.separated : ""}`}>
         <div className={styles.header_inner_container}>
-          <BurgerMenu isScrolled={isScrolled}>
-
-          </BurgerMenu>
+          <BurgerMenu />
           <Link to="/">
             <img src="/svg/logo.svg" alt="logo" />
           </Link>
           <CustomButton
-            backgroundColor={"transparent"}
-            color={"var(--primary)"}
-            border="2px solid var(--primary)"
-            label={"Оставить заявку"}
+            theme={width > 768 ? "secondary" : "round"}
+            size={width > 768 ? "m" : "s"}
+            label={width > 768 ? "Оставить заявку" : ""}
             icon={width < 768 && <img src='../../svg/email.svg' alt="" />}
             onClick={() => setIsFormOpen(true)}
           />

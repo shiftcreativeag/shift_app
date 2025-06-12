@@ -1,0 +1,88 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: var(--transition-duration);
+  font-family: inherit;
+  border: none;
+  background: none;
+  border-radius: 38px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+
+  // Размеры
+  &_size_s {
+    padding: 11px 30px;
+    .button__icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &_size_m {
+    padding: 14px 30px;
+
+    .button__icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &_size_l {
+    padding: 19px 30px;
+  }
+
+  &_size_xl {
+    padding: 24px 30px;
+  }
+
+  &_width_max {
+    width: 100%;
+  }
+
+  // Темы
+  &_theme_primary {
+    background: var(--green);
+    color: var(--primary);
+
+    &:hover:not(.button_disabled) {
+      background: var(--green_hover);
+      box-shadow: 0 0 8px 0 #00000066;
+    }
+  }
+
+  &_theme_secondary {
+    border: 1px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+
+    &:hover:not(.button_disabled) {
+      border: 1px solid var(--green_hover);
+      background: var(--green_hover);
+      box-shadow: 0 0 8px 0 #00000066;
+    }
+  }
+
+  &_theme_round {
+    border: 1px solid var(--primary);
+    background: transparent;
+
+    &.button_size_m {
+      padding: 13px;
+    }
+
+    &.button_size_s {
+      padding: 11px;
+    }
+  }
+
+  // Состояние disabled
+  &_disabled {
+    background-color: var(--gray);
+    color: #b0b2c2;
+    cursor: not-allowed;
+  }
+}

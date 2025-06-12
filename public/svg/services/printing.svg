@@ -2,35 +2,5 @@
 <path d="M123.619 41.78C123.619 41.351 123.216 41 122.724 41H75.2762C74.7838 41 74.381 41.351 74.381 41.78V56.21H123.619V41.78ZM137.048 62.45H60.9524C56.0062 62.45 52 65.9405 52 70.25V102.23C52 103.956 53.6002 105.35 55.581 105.35H74.381V118.22C74.381 118.649 74.7838 119 75.2762 119H122.724C123.216 119 123.619 118.649 123.619 118.22V105.35H142.419C144.4 105.35 146 103.956 146 102.23V70.25C146 65.9405 141.994 62.45 137.048 62.45ZM116.01 112.37H81.9905V85.46H116.01V112.37ZM134.362 77.27C134.362 77.699 133.959 78.05 133.467 78.05H128.99C128.498 78.05 128.095 77.699 128.095 77.27V73.37C128.095 72.941 128.498 72.59 128.99 72.59H133.467C133.959 72.59 134.362 72.941 134.362 73.37V77.27Z" fill="#162EAE"/>
 <rect x="82" y="85" width="36" height="28" rx="1" fill="#65E080"/>
 <rect x="128" y="72" width="7" height="6" rx="1" fill="#65E080"/>
-<foreignObject x="26.1333" y="40.1333" width="109.733" height="77.7333"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(4.93px);clip-path:url(#bgblur_0_397_495_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_ii_397_495)" data-figma-bg-blur-radius="9.86667">
-<rect x="36" y="50" width="90" height="58" rx="4" fill="white" fill-opacity="0.1"/>
-</g>
-<mask id="path-5-inside-1_397_495" fill="white">
-<rect x="86" y="60" width="28" height="41" rx="1"/>
-</mask>
-<rect x="86" y="60" width="28" height="41" rx="1" stroke="white" stroke-width="6" mask="url(#path-5-inside-1_397_495)"/>
-<circle cx="105.5" cy="91.5" r="2.5" stroke="white" stroke-width="2"/>
-<line x1="91" y1="68.5" x2="109" y2="68.5" stroke="white" stroke-width="3"/>
-<line x1="91" y1="80.5" x2="109" y2="80.5" stroke="white" stroke-width="3"/>
-<line x1="91" y1="74.5" x2="109" y2="74.5" stroke="white" stroke-width="3"/>
-<path d="M49 72.6667C49 70 54 60 54 60C54 60 59 69.3333 59 72.6667C59 76 56.7614 78 54 78C51.2386 78 49 75.3333 49 72.6667Z" fill="white"/>
-<defs>
-<filter id="filter0_ii_397_495" x="26.1333" y="40.1333" width="109.733" height="77.7333" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dx="-0.986667" dy="0.986667"/>
-<feGaussianBlur stdDeviation="0.493333"/>
-<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0"/>
-<feBlend mode="normal" in2="shape" result="effect1_innerShadow_397_495"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dx="0.986667" dy="-0.986667"/>
-<feGaussianBlur stdDeviation="0.493333"/>
-<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.84 0 0 0 0 0.84 0 0 0 0 0.84 0 0 0 0.4 0"/>
-<feBlend mode="normal" in2="effect1_innerShadow_397_495" result="effect2_innerShadow_397_495"/>
-</filter>
-<clipPath id="bgblur_0_397_495_clip_path" transform="translate(-26.1333 -40.1333)"><rect x="36" y="50" width="90" height="58" rx="4"/>
-</clipPath></defs>
+<path d="M60 79.6667C60 77 65 67 65 67C65 67 70 76.3333 70 79.6667C70 83 67.7614 85 65 85C62.2386 85 60 82.3333 60 79.6667Z" fill="white"/>
 </svg>

@@ -1,0 +1,155 @@
+CustomButton — это универсальный компонент кнопки, который поддерживает различные стили, размеры, типы 
+(обычная кнопка, submit-кнопка или ссылка), иконки, состояние disabled, контроль ширины и другие параметры.
+
+Список пропсов
+theme (обязательный)
+Тип: "primary" | "secondary" | "danger" | "ghost"
+Определяет цветовую тему кнопки. Примеры:
+
+primary — основная кнопка (обычно синяя)
+
+secondary — второстепенная (серая или светлая)
+
+danger — для опасных действий (красная)
+
+ghost — кнопка без фона (только текст/иконка)
+
+size (обязательный)
+Тип: "s" | "m" | "l"
+Размер кнопки:
+
+s — маленькая (компактная)
+
+m — средняя (стандартная)
+
+l — большая
+
+label (обязательный)
+Тип: string
+Текст, отображаемый на кнопке.
+
+type (необязательный)
+Тип: "button" | "submit" | "link"
+По умолчанию: "button"
+Определяет тип элемента:
+
+button — обычная кнопка (<button>)
+
+submit — кнопка отправки формы (<button type="submit">)
+
+link — ссылка (<a> или <Link> из react-router)
+
+icon (необязательный)
+Тип: React.ReactNode
+Иконка, отображаемая перед текстом. Пример: icon={<Icon name="search" />}
+
+onClick (необязательный)
+Тип: () => void
+Обработчик клика. Не срабатывает, если кнопка disabled.
+
+href (необязательный)
+Тип: string
+URL для ссылки (если type="link" и это внешний ресурс).
+
+to (необязательный)
+Тип: string
+Путь для внутренней навигации (если type="link" и используется react-router).
+
+target (необязательный)
+Тип: "_blank" | "_self" | "_parent" | "_top"
+Поведение ссылки (например, _blank для открытия в новой вкладке).
+
+rel (необязательный)
+Тип: string
+Атрибут rel для ссылок (например, "noopener noreferrer" для безопасности).
+
+disabled (необязательный)
+Тип: boolean
+По умолчанию: false
+Блокирует кнопку/ссылку (визуально и функционально).
+
+width (необязательный)
+Тип: "max"
+Растягивает кнопку на всю ширину (добавляет класс button_width_max).
+
+className (необязательный)
+Тип: string
+Дополнительные CSS-классы (добавляются к основным).
+
+Примеры использования:
+
+1. Обычная кнопка
+
+<CustomButton
+  theme="primary"
+  size="m"
+  label="Сохранить"
+  onClick={() => console.log("Клик!")}
+/>
+
+2. Кнопка с иконкой
+
+<CustomButton
+  theme="secondary"
+  size="l"
+  label="Удалить"
+  icon={<TrashIcon />}
+  onClick={handleDelete}
+/>
+
+3. Заблокированная кнопка
+
+<CustomButton
+  theme="danger"
+  size="s"
+  label="Недоступно"
+  disabled={true}
+/>
+
+4. Кнопка-ссылка (внешний URL)
+
+<CustomButton
+  type="link"
+  theme="primary"
+  size="m"
+  label="Открыть сайт"
+  href="https://example.com"
+  target="_blank"
+/>
+
+5. Внутренняя ссылка (React Router)
+
+<CustomButton
+  type="link"
+  theme="ghost"
+  size="l"
+  label="Профиль"
+  to="/profile"
+/>
+
+6. Кнопка на всю ширину
+
+<CustomButton
+  theme="primary"
+  size="m"
+  label="Полная ширина"
+  width="max"
+/>
+
+7. Кнопка с кастомным классом
+
+<CustomButton
+  theme="secondary"
+  size="m"
+  label="Кастомный стиль"
+  className="my-custom-class"
+/>
+
+Примечания
+Для иконок можно использовать библиотеки (react-icons, @heroicons/react) или свои SVG.
+
+Если type="link", укажите либо href (внешняя ссылка), либо to (внутренняя через react-router).
+
+Для disabled-ссылок URL подменяется на #, чтобы сохранить семантику.
+
+Для растягивания кнопки используйте width="max" (добавит button_width_max).

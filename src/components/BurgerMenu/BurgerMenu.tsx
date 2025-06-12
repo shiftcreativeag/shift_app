@@ -1,17 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./BurgerMenu.module.scss";
 
 interface BurgerMenuProps {
   children?: React.ReactNode; // Дочерние элементы (пункты меню)
-  isScrolled?: boolean
 }
 
-export const BurgerMenu: React.FC<BurgerMenuProps> = ({ isScrolled }) => {
+export const BurgerMenu: React.FC<BurgerMenuProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  }, [isOpen]);
 
   return (
     <div className={styles.menu_container}>
@@ -26,7 +33,7 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ isScrolled }) => {
       </button>
 
       {/* Выпадающее меню */}
-      <nav className={`${styles.menu} ${isOpen ? styles.menu_open : ""} ${isScrolled ? styles.scrolled : ''}`}>
+      <nav className={`${styles.menu} ${isOpen ? styles.menu_open : ""}`}>
         <a href="#about_us" className={styles.menu_link} onClick={() => setIsOpen(false)}>
           О студии
         </a>
@@ -62,6 +69,7 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ isScrolled }) => {
           </div>
         </div>
       </nav>
+
     </div>
   );
 };

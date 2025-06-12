@@ -1,7 +1,7 @@
 .menu_container {
   display: inline-block;
   border-radius: 50%;
-  border: var(--primary) 3px solid;
+  border: var(--primary) 1px solid;
   border: none;
   width: 204px;
 
@@ -26,7 +26,7 @@
   outline: none;
   padding: 7px;
   border-radius: 50%;
-  border: var(--primary) 2px solid;
+  border: 1px solid var(--primary);
 
   @media (max-width: 768px) {
     width: 50px;
@@ -95,9 +95,9 @@
   padding: 60px clamp(0.625rem, -0.0893rem + 1.4881vw, 1.25rem);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
+  transform: translatex(-100px);
   transition: all 0.3s ease;
-  z-index: 99;
+  z-index: 3;
   width: 670px;
   display: flex;
   flex-direction: column;
@@ -122,11 +122,6 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-  }
-
-  &.scrolled {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(5px);
   }
 
   &_link {
@@ -162,4 +157,28 @@
       gap: 55px;
     }
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background-color: var(--white);
+    z-index: -1;
+  }
 }
+
+/* .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  backdrop-filter: blur(2px);
+  transition: opacity 0.3s ease;
+} */

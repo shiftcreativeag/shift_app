@@ -4,6 +4,7 @@ import { z } from "zod";
 import styles from "./ContactForm.module.scss";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { CustomButton } from "../CustomButton/CustomButton";
 
 emailjs.init("xmgjD7eb7LMlZ-q0q"); // Замените на ваш Public Key из EmailJS
 
@@ -18,6 +19,7 @@ type FormData = z.infer<typeof formSchema>;
 interface ContactFormProps {
   onClose: () => void;
 }
+
 
 export const ContactFormMainPage: React.FC<ContactFormProps> = ({ onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -85,14 +87,13 @@ export const ContactFormMainPage: React.FC<ContactFormProps> = ({ onClose }) => 
                     <span className={styles.error}>{errors.phone.message}</span>
                   )}
                 </div>
-                <button
-                  type="submit"
-                  className={styles.form_main_submit_button}
+                <CustomButton
+                  theme="primary"
+                  size="s"
+                  label={"Отправить"}
                   disabled={!isValid}
-                  title={!isValid ? "Заполните все обязательные поля" : ""}
-                >
-                  Отправить
-                </button>
+                  type="submit"
+                ></CustomButton>
 
               </div>
               <label className={styles.form_main_checkbox_label}>

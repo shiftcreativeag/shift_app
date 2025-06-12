@@ -4,6 +4,7 @@ import { z } from "zod";
 import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./ContactForm.module.scss";
+import { CustomButton } from "../CustomButton/CustomButton";
 
 // Инициализация EmailJS (вынесите в отдельный конфиг при необходимости)
 emailjs.init("xmgjD7eb7LMlZ-q0q"); // Замените на ваш Public Key из EmailJS
@@ -94,6 +95,15 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
     "Лендинг",
     "Полиграфия"
   ];
+
+  const [width, setWidth] = useState(window.innerWidth); const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   if (isSubmitted) {
     return (
@@ -208,16 +218,19 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
                 </div>
 
               ) : (
-                <button
-                  type="submit"
-                  className={styles.submit_button}
+                <CustomButton
+                  theme="primary"
+                  size={
+                    width > 1024 ? "l" :
+                      width > 768 ? "m" :
+                        "s"
+                  }
+                  width="max"
+                  label={"Отправить"}
                   disabled={!isValid}
-                  title={!isValid ? "Заполните все обязательные поля" : ""}
-                >
-                  {isValid ? "Отправить" : "Заполните обязательные поля"}
-                </button>
+                  type="submit"
+                ></CustomButton>
               )}
-
 
             </div>
           </form>

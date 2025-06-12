@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
 import { Layout } from "../../components/Layout/Layout";
 import styles from "./MainPage.module.scss";
@@ -15,6 +15,14 @@ import RunningLine from "../../components/RunningLine/RunningLine";
 
 export const MainPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth); const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <Layout>
@@ -172,9 +180,13 @@ export const MainPage = () => {
           Мы делаем современные сайты, доступые каждому
         </h2>
         <CustomButton
-          backgroundColor={"var(--green)"}
-          color={"var(--primary)"}
-          label={"Рассказать нам о своем проекте"}
+          theme="primary"
+          size={
+            width > 1024 ? "l" :
+              width > 768 ? "m" :
+                "s"
+          }
+          label={width > 520 ? "Рассказать нам о своем проекте" : "Рассказать о проекте"}
           onClick={() => setIsFormOpen(true)}
         />
         {isFormOpen && <ContactForm onClose={() => setIsFormOpen(false)} />}
@@ -306,8 +318,12 @@ export const MainPage = () => {
           Мы делаем полный цикл: бренд, упаковка и цифровой запуск
         </h2>
         <CustomButton
-          backgroundColor={"var(--green)"}
-          color={"var(--primary)"}
+          theme="primary"
+          size={
+            width > 1024 ? "l" :
+              width > 768 ? "m" :
+                "s"
+          }
           label={"Обсудить проект"}
           onClick={() => setIsFormOpen(true)}
         />
@@ -327,32 +343,32 @@ export const MainPage = () => {
           <MemberCard
             name="Иван Иванов"
             role="Директор"
-            imageName="member"
+            imageName="/png/team/1.png"
           />
           <MemberCard
             name="Иван Иванов"
             role="Директор"
-            imageName="member"
+            imageName="/png/team/2.png"
           />
           <MemberCard
             name="Иван Иванов"
             role="Директор"
-            imageName="member"
+            imageName="/gif/member-animation.gif"
           />
           <MemberCard
             name="Иван Иванов"
             role="Директор"
-            imageName="member"
+            imageName="/png/team/4.png"
           />
           <MemberCard
             name="Иван Иванов"
             role="Директор"
-            imageName="member"
+            imageName="/png/team/5.png"
           />
           <MemberCard
             name="Иван Иванов"
             role="Директор"
-            imageName="member"
+            imageName="/png/team/6.png"
           />
         </div>
       </section>
@@ -380,10 +396,10 @@ export const MainPage = () => {
             </h4>
             <div className={styles.contacts_content_socials_links}>
               <a href="#contacts">
-                <img src="/svg/icon_tg.svg" alt="telegram" />
+                <img src="/svg/icon_tg_blue.svg" alt="telegram" />
               </a>
               <a href="#contacts">
-                <img src="/svg/icon_vk.svg" alt="vk" />
+                <img src="/svg/icon_vk_blue.svg" alt="vk" />
               </a>
             </div>
             <h4 className={styles.contacts_content_socials_title}>Написать</h4>
