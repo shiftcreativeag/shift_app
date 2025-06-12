@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from "react";
 import styles from './TariffCard.module.scss';
 import { CustomButton } from "../CustomButton/CustomButton";
@@ -13,10 +13,12 @@ interface TariffCardProps {
 	title: string;
 	subtitle: string;
 	iconName: string;
-	features: Feature[]
+	features: Feature[];
+	active?: boolean
 }
 
 export const TariffCard: React.FC<TariffCardProps> = ({
+	active,
 	title,
 	subtitle,
 	iconName,
@@ -24,6 +26,15 @@ export const TariffCard: React.FC<TariffCardProps> = ({
 }) => {
 
 	const [isFormOpen, setIsFormOpen] = useState(false);
+
+	const [width, setWidth] = useState(window.innerWidth); const handleResize = () => {
+		setWidth(window.innerWidth);
+	};
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	return (
 		<div className={styles.tariffCard}>
@@ -49,9 +60,12 @@ export const TariffCard: React.FC<TariffCardProps> = ({
 			</ul>
 			<div className={styles.button}>
 				<CustomButton
-					backgroundColor={"var(--white)"}
-					color={"var(--primary)"}
-					border="1px solid var(--primary)"
+					theme={active ? "primary" : "secondary"}
+					size={
+						width > 1024 ? "l" :
+							width > 768 ? "m" :
+								"s"
+					}
 					label={"Оставить заявку"}
 					onClick={() => setIsFormOpen(true)}
 				/>

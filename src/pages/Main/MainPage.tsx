@@ -271,6 +271,7 @@ export const MainPage = () => {
         <h3 className={styles.price_title}>Пакеты услуг</h3>
         <div className={styles.price_container}>
           <TariffCard
+            active={true}
             title="Старт"
             subtitle="Подходит для быстрого запуска бизнеса"
             iconName="start"
