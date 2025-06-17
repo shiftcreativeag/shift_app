@@ -7,7 +7,7 @@ import styles from "./ContactForm.module.scss";
 import { CustomButton } from "../CustomButton/CustomButton";
 
 // Инициализация EmailJS (вынесите в отдельный конфиг при необходимости)
-emailjs.init("xmgjD7eb7LMlZ-q0q"); // Замените на ваш Public Key из EmailJS
+emailjs.init("uXCSm84BQc-L3_tKE"); // Замените на ваш Public Key из EmailJS
 
 const formSchema = z.object({
   name: z.string().min(2, "Имя должно содержать минимум 2 символа"),
@@ -54,8 +54,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
 
       // Отправка через EmailJS
       await emailjs.send(
-        "service_8joqnbe", // Замените на ваш Service ID
-        "template_3b1u8cp", // Замените на ваш Template ID
+        "service_1jw38vd", // Замените на ваш Service ID
+        "template_qmfoyna", // Замените на ваш Template ID
         templateParams
       );
 
