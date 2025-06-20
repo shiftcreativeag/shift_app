@@ -14,6 +14,7 @@ import RunningLine from "../../components/RunningLine/RunningLine";
 import { caseCardItems } from "../../components/CaseCard/caseCardItems";
 import { serviceCardItems } from "../../components/ServiceCard/serviceCardItems";
 import { tariffCardItems } from "../../components/TariffCard/tariffCardItems";
+import { memberCardItems } from "../../components/MemberCard/memberCardItems";
 
 export const MainPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -195,36 +196,9 @@ export const MainPage = () => {
           решения»
         </h4>
         <div className={styles.team_members}>
-          <MemberCard
-            name="Иван Иванов"
-            role="Директор"
-            imageName="/png/team/1.png"
-          />
-          <MemberCard
-            name="Иван Иванов"
-            role="Директор"
-            imageName="/png/team/2.png"
-          />
-          <MemberCard
-            name="Иван Иванов"
-            role="Директор"
-            imageName="/gif/member-animation.gif"
-          />
-          <MemberCard
-            name="Иван Иванов"
-            role="Директор"
-            imageName="/png/team/4.png"
-          />
-          <MemberCard
-            name="Иван Иванов"
-            role="Директор"
-            imageName="/png/team/5.png"
-          />
-          <MemberCard
-            name="Иван Иванов"
-            role="Директор"
-            imageName="/png/team/6.png"
-          />
+          {memberCardItems.map((item, index) => (
+            <MemberCard key={index} {...item} />
+          ))}
         </div>
       </section>
 
