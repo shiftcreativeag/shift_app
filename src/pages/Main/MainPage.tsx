@@ -11,17 +11,19 @@ import { ContactForm } from "../../components/ContactForm/ContactForm";
 import ParticlesBackground from "../../components/Particles/ParticlesBackground";
 import { ContactFormMainPage } from "../../components/ContactForm/ContactFormMainPage";
 import RunningLine from "../../components/RunningLine/RunningLine";
-
+import { caseCardItems } from "../../components/CaseCard/caseCardItems";
+import { serviceCardItems } from "../../components/ServiceCard/serviceCardItems";
 
 export const MainPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth); const handleResize = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const handleResize = () => {
     setWidth(window.innerWidth);
   };
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -53,122 +55,17 @@ export const MainPage = () => {
         <h4 className={styles.services_subtitle}>Услуги</h4>
         <h3 className={styles.services_title}>Что мы делаем</h3>
         <div className={styles.services_container}>
-          <ServiceCard
-            title="Сайты"
-            description="Многостраничные сайты, корпоративные сайты"
-            price="от 100 000 ₽"
-            duration="от 14 дней"
-            iconName="sites"
-            includesList={[
-              "Дизайн десктопной версии",
-              "Адаптивы под планшет, мобильные телефоны",
-              "Верстка",
-            ]}
-          />
-
-          <ServiceCard
-            title="Лендинг"
-            description="Одностраничные сайты для промоакций, событий"
-            price="от 100 000 ₽"
-            duration="от 14 дней"
-            iconName="landings"
-            includesList={[
-              "Уникальный дизайн",
-              "Привлекающие CTA",
-              "Оптимизация конверсии",
-            ]}
-          />
-
-          <ServiceCard
-            title="Брендинг"
-            description="Разработка бренда, айдентики с нуля"
-            price="от 100 000 ₽"
-            duration="от 14 дней"
-            iconName="branding"
-            includesList={[
-              "Логотип и фирменный стиль",
-              "Гайдлайн по использованию",
-              "Брендбук",
-            ]}
-          />
-
-          <ServiceCard
-            title="SMM"
-            description="Продвижение в социальных сетях"
-            price="от 100 000 ₽"
-            duration="от 14 дней"
-            iconName="smm"
-            includesList={[
-              "Стратегия продвижения",
-              "Создание контента",
-              "Аналитика и отчёты",
-            ]}
-          />
-
-          <ServiceCard
-            title="Интернет-магазины"
-            description="Сайты для продаж товаров и услуг"
-            price="от 100 000 ₽"
-            duration="от 14 дней"
-            iconName="online-store"
-            includesList={[
-              "Каталог товаров",
-              "Удобная корзина",
-              "Интеграция с платежами",
-            ]}
-          />
-
-          <ServiceCard
-            title="Видео"
-            description="Создание видео-роликов"
-            price="от 100 000 ₽"
-            duration="от 14 дней"
-            iconName="video"
-            includesList={[
-              "Сценарий и съемка",
-              "Монтаж и эффекты",
-              "Финальный экспорт",
-            ]}
-          />
-
-          <ServiceCard
-            title="Полиграфия"
-            description="Печать, разработка макетов"
-            price="от 100 000 ₽"
-            duration="от 14 дней"
-            iconName="printing"
-            includesList={[
-              "Дизайн макетов",
-              "Подготовка к печати",
-              "Контроль качества",
-            ]}
-          />
-
-          <ServiceCard
-            title="SEO-оптимизация"
-            description="Повышение видимости в поисковых системах"
-            price="от 100 000 ₽"
-            duration="от 14 дней"
-            iconName="seo"
-            includesList={[
-              "Анализ сайта",
-              "Оптимизация контента",
-              "Построение ссылок",
-            ]}
-          />
-
-          <ServiceCard
-            title="Аудит безопасности"
-            description="Пентест, комплаенс, юридическое сопровождение"
-            price="от 100 000 ₽"
-            duration="от 14 дней"
-            iconName="security-audit"
-            includesList={[
-              "Проверка уязвимостей",
-              "Отчёты и рекомендации",
-              "Юридическая поддержка",
-            ]}
-          />
+          {serviceCardItems.map((item, index) => (
+            <ServiceCard
+              key={index}
+              title={item.title}
+              description={item.description}
+              price={item.price}
+              duration={item.duration}
+              iconName={item.iconName}
+              includesList={item.includesList}
+            />
+          ))}
         </div>
       </section>
 
@@ -193,36 +90,9 @@ export const MainPage = () => {
         <h4 className={styles.portfolio_subtitle}>портфолио</h4>
         <h3 className={styles.portfolio_title}>Наши кейсы</h3>
         <div className={styles.portfolio_container}>
-          <CaseCard
-            title="Название проекта"
-            description="Описание проекта"
-            tag="Брендинг"
-            imageUrl="/jpg/cases/case-2.jpg"
-          />
-          <CaseCard
-            title="Название проекта"
-            description="Описание проекта"
-            tag="Брендинг"
-            imageUrl="/jpg/cases/case-2.jpg"
-          />
-          <CaseCard
-            title="Название проекта"
-            description="Описание проекта"
-            tag="Брендинг"
-            imageUrl="/jpg/cases/case-2.jpg"
-          />
-          <CaseCard
-            title="Название проекта"
-            description="Описание проекта"
-            tag="Брендинг"
-            imageUrl="/jpg/cases/case-2.jpg"
-          />
-          <CaseCard
-            title="Название проекта"
-            description="Описание проекта"
-            tag="Брендинг"
-            imageUrl="/jpg/cases/case-2.jpg"
-          />
+          {caseCardItems.map((item, index) => (
+            <CaseCard key={index} {...item} />
+          ))}
         </div>
       </section>
 
