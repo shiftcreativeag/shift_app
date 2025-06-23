@@ -87,13 +87,16 @@ export const ContactFormMainPage: React.FC<ContactFormProps> = ({ onClose }) => 
                     <span className={styles.error}>{errors.phone.message}</span>
                   )}
                 </div>
-                <CustomButton
-                  theme="primary"
-                  size="s"
-                  label={"Отправить"}
-                  disabled={!isValid}
-                  type="submit"
-                ></CustomButton>
+                <div className={styles.form_main_button}>
+                  <CustomButton
+                    theme="primary"
+                    size="s"
+                    label={"Отправить"}
+                    disabled={!isValid}
+                    type="submit"
+                    width="max"
+                  ></CustomButton>
+                </div>
 
               </div>
               <label className={styles.form_main_checkbox_label}>
