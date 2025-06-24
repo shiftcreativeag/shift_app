@@ -252,7 +252,7 @@ export const MainPage = () => {
           <div className={styles.contacts_content_address}>
             <h4 className={styles.contacts_content_address_title}>Адрес</h4>
             <p className={styles.contacts_content_address_text}>
-              г. Санк-Петербург,
+              г. Санк-Петербург, <br /> ул. Константина Заслонова д. 7
             </p>
           </div>
         </div>
