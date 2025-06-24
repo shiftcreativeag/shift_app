@@ -3,6 +3,7 @@ import { Navigation, FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ReviewCard } from '../ReviewCard/ReviewCard';
 import './ReviewsSwiper.scss';
+import { reviewItems } from './reviewItems';
 
 
 import '../../../node_modules/swiper/swiper.css'
@@ -24,46 +25,28 @@ export const ReviewsSwiper: React.FC = () => {
         0: {
           spaceBetween: 16,
         },
-        1300: {
-          spaceBetween: 20,
+        740: {
+          spaceBetween: 16,
           navigation: {
             enabled: true,
           },
         },
+        1300: {
+          spaceBetween: 20,
+        },
       }}
     >
-      <SwiperSlide>
-        <ReviewCard
-          name="Мария"
-          company="Компания X"
-          review="Ценим оперативность и отзывчивость. Не первый раз работаем. Создавали айдентику для нашей компании."
-          avatarUrl="member"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ReviewCard
-          name="Мария"
-          company="Компания X"
-          review="Ценим оперативность и отзывчивость. Не первый раз работаем. Создавали айдентику для нашей компании."
-          avatarUrl="member"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ReviewCard
-          name="Мария"
-          company="Компания X"
-          review="Ценим оперативность и отзывчивость. Не первый раз работаем. Создавали айдентику для нашей компании."
-          avatarUrl="member"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <ReviewCard
-          name="Мария"
-          company="Компания X"
-          review="Ценим оперативность и отзывчивость. Не первый раз работаем. Создавали айдентику для нашей компании."
-          avatarUrl="member"
-        />
-      </SwiperSlide>
+
+      {reviewItems.map((item, index) => (
+        <SwiperSlide key={index}>
+          <ReviewCard
+            name={item.name}
+            company={item.company}
+            review={item.review}
+            avatarUrl={item.avatarUrl}
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

@@ -35,8 +35,12 @@ body {
 }
 
 // Добавляем стили для .swiper-slide-next
-:global(.swiper-slider-next) {
+:global(.swiper-slide-next) {
   // Здесь можно задать дополнительные стили, если нужно
+}
+
+:global(.swiper-slide) {
+  min-height: 100%;
 }
 
 body.menu-open {

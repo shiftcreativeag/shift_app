@@ -1,9 +1,15 @@
+:global(.swiper-slide) {
+  min-height: 100%;
+  height: auto !important;
+}
+
 .card {
   background: var(--white);
   border-radius: 4px;
   padding: 30px 20px;
   max-width: 438px;
   min-height: 283px;
+  height: 100%;
   transition: background-color 0.3s ease;
   user-select: none;
 
