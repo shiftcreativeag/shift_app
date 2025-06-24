@@ -224,7 +224,7 @@ export const MainPage = () => {
               Социальные сети
             </h4>
             <div className={styles.contacts_content_socials_links}>
-              <a href="#contacts">
+              <a href="https://t.me/infinite_security" target="_blank">
                 <img src="/svg/icon_tg_blue.svg" alt="telegram" />
               </a>
               <a href="#contacts">
@@ -233,8 +233,19 @@ export const MainPage = () => {
             </div>
             <h4 className={styles.contacts_content_socials_title}>Написать</h4>
             <div className={styles.contacts_content_socials_links_text}>
-              <a href="#contacts">В Телеграм</a>
-              <a href="#contacts">По E-mail</a>
+              <a
+                href="https://t.me/infinite_security"
+                target="_blank"
+                className={styles.contacts_content_socials_links_text_telegram}
+              >
+                В Телеграм
+              </a>
+              <a
+                href="mailto:sales@shiftcreative.bizml.ru?subject=Вопрос по услугам&body=Здравствуйте,"
+                className={styles.contacts_content_socials_links_text_mail}
+              >
+                sales@shiftcreative.bizml.ru
+              </a>
             </div>
           </div>
 
