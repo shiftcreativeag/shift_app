@@ -15,7 +15,7 @@ export const caseCardItems = [
     title: "Контент для ВК",
     description: "Видео",
     tag: "Видео",
-    imageUrl: "/jpg/cases/case-1.jpg",
+    imageUrl: "/gif/portfolio-video.gif",
   },
   {
     title: "Консалтиновая компания",

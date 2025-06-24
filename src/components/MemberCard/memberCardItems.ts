@@ -2,17 +2,17 @@ export const memberCardItems = [
   {
     name: "Александр Матвеев",
     role: "Генеральный директор",
-    imageName: "/gif/member-animation.gif",
+    imageName: "/png/team/1.png",
   },
   {
     name: "Вячеслав Працюк",
     role: "Руководитель проектов",
-    imageName: "/gif/member-animation.gif",
+    imageName: "/png/team/2.png",
   },
   {
     name: "Ирина Ковалёва",
     role: "UX/UI-дизайнер",
-    imageName: "/gif/member-animation.gif",
+    imageName: "/png/team/4.png",
   },
   {
     name: "Роман Улитин",
@@ -22,11 +22,11 @@ export const memberCardItems = [
   {
     name: "Денис Соловьёв",
     role: "Бэкенд-разработчик",
-    imageName: "/gif/member-animation.gif",
+    imageName: "/png/team/3.png",
   },
   {
     name: "Игорь Васильев",
     role: "Тестировщик / QA",
-    imageName: "/gif/member-animation.gif",
+    imageName: "/png/team/5.png",
   },
 ];
