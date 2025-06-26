@@ -14,25 +14,16 @@ export const ReviewsSwiper: React.FC = () => {
     <Swiper
       modules={[Navigation, FreeMode]}
       grabCursor={true}
+      spaceBetween="16"
       slidesPerView="auto"
       navigation={{
         nextEl: '.review-slider-next',
         prevEl: '.review-slider-prev',
-        enabled: false,
       }}
       freeMode={true}
       breakpoints={{
-        0: {
-          spaceBetween: 16,
-        },
-        740: {
-          spaceBetween: 16,
-          navigation: {
-            enabled: true,
-          },
-        },
         1300: {
-          spaceBetween: 20,
+          spaceBetween: 20
         },
       }}
     >
